@@ -47,13 +47,42 @@ color:#262626;
  	font-size: 1em;
  	color: #dcdde1;
  }
- .main .btn{
- 	background: #7189093;
- 	color:#fff;
- 	border-radius:0;
- 	padding-left:2px;
- 	padding-right: 20px;
+ .btn_1{
+ border: 1px solid #0f3a57;
+ background: #0f3a57 ;
+ padding: 10px 20px;
+ font-size: 20px;
+ cursor: pointer;
+ margin: 10px;
+ color: white;
+ transition: 0.08s;
+ position: relative;
+ overflow: hidden;
+ text-transform: uppercase;
+ font-weight: 600;
+
  }
+ .btn_1:hover{
+ 	background-color:#3498db;
+ 	
+ }
+/*.btn_1::before{
+content: "";
+position: absolute;
+left: 0;
+width: 100%;
+height: 0%;
+background: #3498db;
+z-index: -1;
+transition: 0.8s;
+top: 0;
+border-radius: 0 0 50% 50%;
+}
+*/
+/*.btn_1:hover::before{
+height: 180%;
+}
+*/
  @media(max-width: 768px){
  	.main{
  		padding: 200px 0;
