@@ -1,0 +1,109 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<html>
+ <meta charset="utf-8">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='top.css')}}">
+<head>
+<title>Car Rental DMS Project</title>
+</head>
+<body>
+<section id="header">
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+
+			<div class="container">
+			<a href="#" class="navbar-brand">Car Rental Company</a>
+			<button class="navbar-toggler" type="button" data-togger= "collapse" data-target= "#navbarSupportedContent" aria-controls = "navbarSupportedContent" aria-expanded ="false" aria-lable = "Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class ="navbar-nav ml-auto">
+						<li class="nav-item activate">
+							<a class="nav-link" href="#">Home</a>
+						</li>
+						<li class="nav-item activate">
+							<a class="nav-link" href="#">About</a>
+						</li>
+						<li class="nav-item activate">
+							<a class="nav-link" href="signup">Sign up</a>
+						</li>
+						<li class="nav-item activate">
+							<a class="nav-link" href="login">Log In</a>
+						</li>
+						<li class="nav-item activate">
+							<a class="nav-link" href="#">Contact Us</a>
+						</li>
+					</ul>	
+				</div>
+			</div>
+	</nav>
+	</div>	
+</section>
+
+	<section class="main">
+		<div class="row">
+			<div class="col-sm-6">
+				<h2>Make a Reservation</h2>
+				<p>Welcome to our simple web application that allows users to rent a car
+					by selecting a pick up and drop off location. Note. Users will be
+					assigned a unique customer id upon registration which can later be
+					used to login.</p>
+				<form action="{{ url_for('reservation') }}" method="GET">
+				<button class="btn_1">get started</button>
+				</form>
+			</div>
+			</div>
+	</section>
+
+
+<footer>
+	<div class="container">
+		<div class="ftr">
+			<h3> About</h3>
+			<ul class="content">
+				<li><a href="#">Careers</a></li>
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Work</a></li>
+			</ul>
+		</div>
+		<div class="ftr">
+			<h3>Contact</h3>
+			<ul class="content">
+				<li><a href="#">CarRental@example.com</a></li>
+				<li><a href="#">+708912345</a></li>
+				<li><a href="#">Oshawa,Simco steet</a></li>
+			</ul>
+		</div>
+		<div class="ftr">
+			<h3> Social</h3>
+			<ul class="content">
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Instagram</a></li>
+			</ul>
+		</div>
+		<div class="ftr">
+			<h3> Join us</h3>
+			<form action="#">
+				<input type="email" placeholder="Enter your email" required>
+				<div class="btn">
+					<input type="submit" value="SUBSCRIBE">
+					
+				</div>
+			</form>
+		</div>
+		
+	</div>
+</footer>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,163 @@
+ *{
+ 	margin: o;
+ 	padding: 0;
+ }
+ #header{
+ 	position:absolute;
+ 	z-index: 10;
+ 	width:100%;
+ }
+ .navbar{
+ 	padding: 50px 0;
+ }
+ .navbar-brand{
+ font-weight: 600;
+ font-size: 1.56em;
+ }
+ .navbar-dark .navbar-brand{
+ 	color: #dcdde1;
+ }
+ .nav-item{
+ 	font-weight:600;
+ 	text-transform: uppercase;
+ 	padding-left: 10px;
+ }
+ .navbar-dark .navbar-nav .nav-item .nav-link:hover {
+background: #dcdde1;
+color:#262626;
+ }
+ .main{
+ 	position: relative;
+ 	background:url(img.jpg);
+ 	min-height: 100vh;
+ 	background-size: cover;
+ 	background-position: center;
+ 	padding: 230px 100px;
+ }
+ .main h2 {
+ 	margin:0;
+ 	padding:0;
+ 	font-size: 2.6em;
+ 	color: #dcdde1;
+ 	font-weight: bold;	
+ }
+ .main p{
+ 	margin-top:1em;
+ 	padding:0;
+ 	font-size: 1.1em;
+ 	color: #dcdde1;
+ }
+ .btn_1{
+ border: 1px solid #0f3a57;
+ background: #0f3a57 ;
+ padding: 10px 20px;
+ font-size: 20px;
+ cursor: pointer;
+ margin: 10px;
+ color: white;
+ transition: 0.08s;
+ position: relative;
+ overflow: hidden;
+ text-transform: uppercase;
+ font-weight: 600;
+
+ }
+ .btn_1:hover{
+ 	background-color:#3498db;
+ 	
+ }
+/*.btn_1::before{
+content: "";
+position: absolute;
+left: 0;
+width: 100%;
+height: 0%;
+background: #3498db;
+z-index: -1;
+transition: 0.8s;
+top: 0;
+border-radius: 0 0 50% 50%;
+}
+*/
+/*.btn_1:hover::before{
+height: 180%;
+}
+*/
+ @media(max-width: 768px){
+ 	.main{
+ 		padding: 200px 0;
+ 	}
+ 	.main h2 {
+ 		font-size: 2em;
+ 	}
+ }
+
+ footer{
+ 	background:#212121;
+ 	padding:50px 20px;
+ }
+ footer .container{
+ 	width: 100%;
+ 	max-width: 11000px;
+ 	margin: 0 auto;
+ 	display: flex;
+ 	align-items: flex-start;
+ 	justify-content: space-between;
+ 	flex-wrap: wrap;
+ }
+ footer .ftr h3{
+ 	font-size: 1.4em;
+ 	margin-bottom: 1.12em;
+ 	color:#fff;
+ }
+ footer .content{
+ 	list-style: none;
+ }
+ footer .content a{
+ 	text-decoration: none;
+ 	color: #fff;
+ 	opacity: 0.6;
+ 	line-height: 30px;
+ 	transition: 0.3s ease opacity;
+}
+footer .content a:hover{
+	opacity: 1;
+}
+footer .ftr {
+	flex-basis: 18%;
+}
+form{
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+input{
+	border: none;
+	outline: none;
+	padding: 10px;
+	margin: 5px 0;
+	background: #f5f5f5;
+}
+.btn input{
+	background: #0b2c41;
+	color: #fff;
+	transition: 0.3s ease background;
+}
+.btn input:hover{
+	background: #000;
+}
+@media only screen and (max-width: 540px){
+	footer .ftr{
+		flex-basis: 80%;
+		margin: 0 auto;
+
+	}
+	form{
+		flex-direction: column;
+	}
+	form input{
+		width: 90%;
+		margin: 5px auto;
+	}
+}
+
