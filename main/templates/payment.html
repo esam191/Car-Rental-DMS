@@ -10,7 +10,7 @@
   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
 <!--style="background-image: url(https://i.pinimg.com/originals/78/9d/10/789d108ae0ba9a93266170031c109189.jpg)"-->
 <head>
-<title>Reservation</title>
+<title>Conform Your Payment</title>
 </head>
 <body style="background-image: url(https://wallpaperaccess.com/full/11207.jpg)">
 <section id="header">
@@ -26,16 +26,16 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class ="navbar-nav ml-auto">
 						<li class="nav-item activate">
-							<a class="nav-link" href="home">Home</a>
+							<a class="nav-link" href="home" style="color: #212121;font-weight: bold">Home</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="reservation">Reservation</a>
+							<a class="nav-link" href="reservation" style="color: #212121;font-weight: bold">Reservation</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="#">Deals</a>
+							<a class="nav-link" href="#"style="color: #212121;font-weight: bold">Deals</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="#">Location</a>
+							<a class="nav-link" href="#"style="color: #212121;font-weight: bold">Location</a>
 						</li>
 					</ul>
 				</div>
@@ -47,76 +47,58 @@
 
 
 <section class="main">
-<h4 class="mt-3" style="color:white">Reservation</h4>
- <form action="#" style="color:white" method="post">
+<h4 class="mt-4" style="color: white">Confrom Your Payment</h4>
+ <form style="color: white">
   <div class="container">
         <div class="row">
-              <div class="col-sm-6" id="City">
-                <label for="City" class="form-label">Pick Up Location </label>
-                <input type="text" class="form-control" name="City" placeholder="Pick Up" required>
+              <div class="col-sm-12">
+                <label for="holdername" class="form-label">Card Holder Name</label>
+                <input type="text" class="form-control" id="holdername" placeholder="Car Holder Name">
               </div>
-              <div class="col-sm-6" id="D_Address">
-                <label for="D_Address" class="form-label">Drop Off Location</label>
-                <input type="text" class="form-control" name="D_Address" placeholder="Drop Off">
+              <div class="col-sm-6">
+                <label for="PaymentType" class="form-labe">Payment Type</label>
+                <input type="text" class="form-control" id="PayemntType" placeholder="Payment Type">
               </div>
-
-                <div class="col-sm-6" id="ReserveFrom">
-                <label for="ReserveFrom" class="form-label">Reserve From </label>
-                <input type="date" class="form-control" name="ReserveFrom" placeholder="Reserve Form" required>
+              <div class="col-sm-6">
+                <label for="Date" class="form-label"> Payemnt Date</label>
+                <input type="date" class="form-control" id="Date" placeholder="Date">
               </div>
-              <div class="col-sm-6" id="ReserveTo">
-                <label for="ReserveTo" class="form-label">Reserve To</label>
-                <input type="date" class="form-control" name="ReserveTo" placeholder="Reserve To">
-              </div>
-           <div class="col-12" id="P_Address">
-                <label for="P_Address" class="form-label">Address</label>
-                    <input type="text" class="form-control" name="P_Address" placeholder="StreetAddress" required>
+          <!--  <div class="col-12">
+                <label for="StreetAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="StreetAddress" placeholder="StreetAddress">
             </div>
-            <br>
+            <br> -->
         </div>
  </div>
 <div class="container">
       <div class="row">
-            <div class="col-md-3" id="Province">
-                <label for="Province" class="form-label">Province</label>
-                <input type="text" class="form-control" name="Province" placeholder="Province" required>
+            <div class="col-md-6" id="CardNumber">
+                <label for="CardNumber" class="form-label">Card Number</label>
+                <input type="number" class="form-control" name="CardNumber" placeholder="Card Number" required>
             </div>
-            <div class="col-md-4" id="Postal_Code">
-                <label for="Postal_Code" class="form-label">Postal Code</label>
-                <input type="text" class="form-control" name="Postal_Code" placeholder="Postal Code" required>
-            </div>
-            <div class="col-md-5" id="Insurance">
-                <label for="Insurance" class="form-label">Insurance </label>
-                <input type="text" class="form-control" name="Insurance" placeholder="Insurance Number" required>
+            <div class="col-md-6" id="Cvv">
+                <label for="Cvv" class="form-label">Cvv code </label>
+                <input type="number" class="form-control" name="Cvv" placeholder="Cvv Code" required>
             </div>
 
-              <div class="col-6" id="age">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" name="age" placeholder="Age" required>
+              <div class="col-6" id="TotalAmount">
+                <label for="TotalAmount" class="form-label">Total Amount</label>
+                <input type="number" class="form-control" name="TotalAmount" placeholder="Total Amount" required>
             </div>
 
-            <div class="col-6" id="city1">
-                <label for="city" class="form-label">City</label>
-                <input type="text" class="form-control" name="city" placeholder="City" required>
+            <div class="col-6" id="LateFee">
+                <label for="LateFee" class="form-label">Late Fee</label>
+                <input type="number" class="form-control" name="LateFee" placeholder="Late Fee" required>
             </div>
+       </div>
+ </div>
 
-            <div class="col-md-6" id="car">
-                <label for="car" class="form-label">Cars</label>
-                <select name="car" class="form-control">
-                <option value="choose...">choose..</option>
-                <option value="BMW">BMW</option>
-                <option value="Honda">Honda</option>
-                <option value="Toyota">Toyota</option>
-                </select>
-           	</div>
-         </div>
-      </div>
-
-     <br><br>
-
-     <button class="btn btn-primary btn-lg">Select Car</button>
       </form>
+<br><br>
+     <button class="btn btn-primary btn-lg">Reserve Your Car</button>
+
 </section>
+
 
 
 <footer>
@@ -134,7 +116,7 @@
 			<ul class="content">
 				<li><a href="#">CarRental@example.com</a></li>
 				<li><a href="#">+708912345</a></li>
-				<li><a href="#">Oshawa,Simco steet</a></li>
+				<li><a href="#">Oshawa,Simcoe street</a></li>
 			</ul>
 		</div>
 		<div class="ftr">
@@ -151,11 +133,11 @@
 				<input type="email" placeholder="Enter your email" required>
 				<div class="btn">
 					<input type="submit" value="SUBSCRIBE">
-
+					
 				</div>
 			</form>
 		</div>
-
+		
 	</div>
 </footer>
 

@@ -63,5 +63,13 @@ def reservation():
         return 'success'
     return render_template('Reservation.html')
 
+@app.route('/cars')
+def cars():
+    return render_template('cars.html')
+
+@app.route('/payment')
+def payment():
+    return render_template('payment.html')
+
 if __name__ == '__main__':
     app.run(debug=True, host='localhost')
