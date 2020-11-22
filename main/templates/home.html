@@ -7,37 +7,38 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+	<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='top.css')}}">-->
 <head>
 <title>Car Rental DMS Project</title>
 </head>
-<body>
+<body style="background-image: url(https://wallpaperaccess.com/full/11207.jpg)">
 <section id="header">
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 
-			<div class="container">
-			<a href="home" class="navbar-brand">Car Rental Company</a>
+			<div class="container" >
+			<a href="home" style="color:#212121;font-weight:bold" class="navbar-brand">Car Rental Company</a>
 			<button class="navbar-toggler" type="button" data-togger= "collapse" data-target= "#navbarSupportedContent" aria-controls = "navbarSupportedContent" aria-expanded ="false" aria-lable = "Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse"  id="navbarSupportedContent">
 					<ul class ="navbar-nav ml-auto">
+
 						<li class="nav-item activate">
-							<a class="nav-link" href="home">Home</a>
+							<a class="nav-link" style="color:#212121;font-weight:bold" href="home">Home</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="home">About</a>
+							<a class="nav-link" style="color:#212121;font-weight:bold" href="home">About</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="signup">Sign up</a>
+							<a class="nav-link" style="color:#212121;font-weight:bold" href="signup">Sign up</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="login">Log In</a>
+							<a class="nav-link" style="color:#212121;font-weight:bold"  href="login">Log In</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="home">Contact Us</a>
+							<a class="nav-link" style="color:#212121;font-weight:bold" href="home">Contact Us</a>
 						</li>
 					</ul>	
 				</div>
@@ -46,11 +47,11 @@
 	</div>	
 </section>
 
-	<section class="main">
+	<section class="main" >
 		<div class="row">
 			<div class="col-sm-6">
-				<h2>Make a Reservation</h2>
-				<p>Welcome to our simple web application that allows users to rent a car
+				<h2 style="color: #212121">Make a Reservation</h2>
+				<p style="color: #212121">Welcome to our simple web application that allows users to rent a car
 					by selecting a pick up and drop off location. Note. Users will be
 					assigned a unique customer id upon registration which can later be
 					used to login.</p>
