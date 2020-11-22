@@ -1,5 +1,3 @@
-
-
 {% block content %}
 <html lang="en">
   <head>
@@ -30,60 +28,60 @@
         </div>
 
   <div class="container">
-    <form>
+    <form action="#" method="post">
       <h4 class="mb-3">User Information</h4>
           <div class="row g-3">
-              <div class="col-sm-6">
-                <label for="firstname" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+              <div class="col-sm-6" id="FirstName">
+                <label for="FirstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="FirstName" placeholder="First Name" required>
               </div>
               <div class="col-sm-6">
-                <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                <label for="LastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="LastName" id="LastName" placeholder="Last Name">
               </div>
-          
+
           <div class="col-12">
-                <label for="email" class="form-label">Email</label>
+                <label for="Email" class="form-label">Email</label>
                   <div class="input-group">
                     <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" id="email" placeholder="Email" required>
+                    <input type="text" class="form-control" name="Email" id="Email" placeholder="Email" required>
                   </div>
           </div>
            <div class="col-12">
                 <label for="StreetAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="StreetAddress" placeholder="StreetAddress" required>
+                    <input type="text" class="form-control" name="StreetAddress" id="StreetAddress" placeholder="StreetAddress" required>
             </div><br>
           </div>
 
-          <div class="row g-3">          
-            <div class="col-md-3">
+          <div class="row g-3">
+            <div class="col-md-3"id="Province">
                 <label for="Province" class="form-label">Province</label>
-                <input type="text" class="form-control" id="Province" placeholder="Province" required>
+                <input type="text" class="form-control" name="Province" placeholder="Province" required>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4"id="PostalCode">
                 <label for="PostalCode" class="form-label">Postal Code</label>
-                <input type="text" class="form-control" id="PostalCode" placeholder="Postal Code" required>
+                <input type="text" class="form-control" name="PostalCode" placeholder="Postal Code" required>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5" id="DriversID">
                 <label for="DriversID" class="form-label">Drivers ID</label>
-                <input type="text" class="form-control" id="DriversId" placeholder="Drivers ID" required>
+                <input type="text" class="form-control" name="DriversID" placeholder="Drivers ID" required>
             </div>
 
-              <div class="col-3">
+              <div class="col-3" id="Age">
                 <label for="Age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="Age" placeholder="Age" required>
+                <input type="number" class="form-control" name="Age" placeholder="Age" required>
             </div>
-            <div class="col-4">
-                <label for="PhoneNO" class="form-label">PhoneNumber</label>
-                <input type="number" class="form-control" id="PhoneNo" placeholder="PhoneNumber" required>
+            <div class="col-4" id="PhoneNo">
+                <label for="PhoneNo" class="form-label">PhoneNumber</label>
+                <input type="number" class="form-control" name="PhoneNo" placeholder="PhoneNumber" required>
             </div>
-            <div class="col-5">
+            <div class="col-5" id="City">
                 <label for="City" class="form-label">City</label>
-                <input type="text" class="form-control" id="City" placeholder="City" required>
+                <input type="text" class="form-control" name="City"  placeholder="City" required>
             </div>
           </div>
 
-          <hr class="my-4">
+         <hr class="my-4">
           <button class="btn btn-primary btn-lg btn-block">Create Account</button><br><br>
             <a href="login">
                 <label><u>or click here to login</u></label>
@@ -91,7 +89,8 @@
 
       </form>
     </div>
-           </div>
+       </div>
   </body>
 </html>
 {% endblock %}
+
