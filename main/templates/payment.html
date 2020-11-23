@@ -47,23 +47,23 @@
 
 
 <section class="main">
-<h4 class="mt-4" style="color: #212121; padding-left: 130px;font-weight:600">Confrom Your Payment</h4>
-<form style="color: #212121">
+<h4 class="mt-4" style="color: #212121; padding-left: 130px;font-weight:600">Confirm Your Payment</h4>
+<form style="color: #212121" action="#" method="post">
  	<div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <label for="holdername" class="form-label">Card Holder Name</label>
-                <input type="text" class="form-control" id="holdername" placeholder="Car Holder Name">
+            <div class="col-sm-12" id="CardHolderName">
+                <label for="CardHolderName" class="form-label">Card Holder Name</label>
+                <input type="text" class="form-control" name="CardHolderName" placeholder="Car Holder Name">
             </div>
         </div>
         	<div class="row">
-              <div class="col-sm-6">
-                <label for="PaymentType" class="form-labe">Payment Type</label>
-                <input type="text" class="form-control" id="PaymentType" placeholder="Payment Type">
+              <div class="col-sm-6" id="PaymentType">
+                <label for="PaymentType" class="form-label">Payment Type</label>
+                <input type="text" class="form-control" name="PaymentType" placeholder="Payment Type">
               </div>
-              <div class="col-sm-6">
-                <label for="Date" class="form-label"> Payemnt Date</label>
-                <input type="date" class="form-control" id="Date" placeholder="Date">
+              <div class="col-sm-6" id="Date">
+                <label for="Date" class="form-label"> Payment Date</label>
+                <input type="text" class="form-control" name="Date" placeholder="YYYY-MM-DD">
               </div>
             </div>
           <!--  <div class="col-12">
@@ -76,9 +76,9 @@
                 <label for="CardNumber" class="form-label">Card Number</label>
                 <input type="number" class="form-control" name="CardNumber" placeholder="Card Number" required>
             </div>
-            <div class="col-md-6" id="Cvv">
-                <label for="Cvv" class="form-label">Cvv code </label>
-                <input type="number" class="form-control" name="Cvv" placeholder="Cvv Code" required>
+            <div class="col-md-6" id="cvv">
+                <label for="cvv" class="form-label">Cvv code </label>
+                <input type="number" class="form-control" name="cvv" placeholder="Cvv Code" required>
             </div>
         </div>
         <div class="row">
@@ -88,7 +88,7 @@
             </div>
             <div class="col-6" id="LateFee">
                 <label for="LateFee" class="form-label">Late Fee</label>
-                <input type="number" class="form-control" name="LateFee" placeholder="Late Fee" required>
+                <input type="number" class="form-control" name="LateFee" placeholder="Late Fee">
             </div>
        </div>
 
