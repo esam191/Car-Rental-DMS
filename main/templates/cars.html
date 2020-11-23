@@ -1,3 +1,5 @@
+
+
 {% extends 'base.html'%}
 {% block content %}
 <html>
@@ -48,22 +50,22 @@
 
 <section class="main">
 <h4 class="mt-4" style="color:#212121;padding-left:80px;font-weight:600">Make your selection</h4>
-<form style="color: #212121">
+<form style="color: #212121" action="#" method="post">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12" id="LicensePlate">
                 <label for="LicensePlate" class="form-label">License Plate </label>
-                <input type="text" class="form-control" id="LicensePlate" placeholder="LicensePlate">
+                <input type="text" class="form-control" name="LicensePlate" placeholder="LicensePlate">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                <label for="Make" class="form-labe">Make</label>
-                <input type="text" class="form-control" id="Make" placeholder="Make">
+            <div class="col-sm-6" id="Make">
+                <label for="Make" class="form-label">Make</label>
+                <input type="text" class="form-control" name="Make" placeholder="Make">
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6" id="Model">
                 <label for="Model" class="form-label"> Car Model</label>
-                <input type="text" class="form-control" id="Model" placeholder="Car Model">
+                <input type="text" class="form-control" name="Model" placeholder="Car Model">
             </div>
         </div>
           <!--  <div class="col-12">
@@ -72,23 +74,23 @@
             </div>
             <br> -->
       	<div class="row">          
-            <div class="col-md-6">
+            <div class="col-md-6" id="Year">
                 <label for="Year" class="form-label">Year</label>
-                <input type="number" class="form-control" id="Year" placeholder="Year">
+                <input type="number" class="form-control" name="Year" placeholder="Year">
             </div>
-            <div class="col-md-6">
-                <label for="seatingCapacity" class="form-label">Seating Capacity</label>
-                <input type="number" class="form-control" id="seatingCapacity" placeholder="Seating Capacity">
+            <div class="col-md-6" id="SeatingCapacity">
+                <label for="SeatingCapacity" class="form-label">Seating Capacity</label>
+                <input type="number" class="form-control" name="SeatingCapacity" placeholder="Seating Capacity">
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-6" id="Transmission">
                 <label for="Transmission" class="form-label">Transmission</label>
-                <input type="text" class="form-control" id="Transmission" placeholder="Transmission">
+                <input type="text" class="form-control" name="Transmission" placeholder="Transmission">
             </div>
-            <div class="col-6">
+            <div class="col-6" id="Color">
                 <label for="Color" class="form-label">Color</label>
-                <input type="text" class="form-control" id="Color" placeholder="Color">
+                <input type="text" class="form-control" name="Color" placeholder="Color">
             </div>
         </div>
     <br><br><button class="btn btn-primary btn-lg">Proceed towards Payment</button> 
