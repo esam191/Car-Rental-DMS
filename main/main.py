@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, url_for, redirect, session
 from flask_mysqldb import MySQL
-
-app = Flask(_name_)
+import os
+app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -10,22 +11,6 @@ app.config['MYSQL_DB'] = 'car_db'
 app.config['MYSQL_PORT'] = 3306
 
 mysql = MySQL(app)
-
-# @app.before_request
-# def before_request():
-#     g.user = None
-#     if 'user' in session:
-#         g.user = session['user']
-
-# @app.route('/logout')
-# def logout():
-#     session.clear()
-#     return render_template('home.html')
-
-# @app.route('/',method=['GET','POST'])
-# def index():
-#     if 'user' in session:
-#         FirstName = session['user']
 
 @app.route('/home')
 @app.route('/')
@@ -36,16 +21,28 @@ def index():
 def login():
     if request.method == "POST":
         FirstName = request.form['FirstName']
-        Password = request.form['Password'].encode('utf-8')
+        Password = request.form['Password']
         ll = [FirstName, Password]
         conn = mysql.connection.cursor()
         conn.execute("SELECT * FROM customer WHERE FirstName='" + FirstName + "' and Password='" + Password+"'")
-        data = conn.fetchone()
-        if data is None:
-            return "Invalid Username or Password"
+        #conn.execute("""SELECT * FROM `customer` WHERE `FirstName` LIKE '{}' AND `Password` LIKE '{}'""".format(FirstName,Password))
+        data = conn.fetchall()
+        if len(data) > 0:
+            session['Customer_ID'] = data[0][0]
+            return redirect(url_for('reservation'))
+
+
+
+        # if data is None:
+        #     return "Invalid Username or Password"
         else:
-            return render_template('Reservation.html')
+            return redirect(url_for('login'))
     return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('Customer_ID')
+    return redirect(url_for('home'))
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -75,26 +72,66 @@ def signup():
 
 @app.route('/reservation', methods=['GET','POST'])
 def reservation():
-    if request.method == "POST":
-        City = request.form['City']
-        #D_Address = request.form['D_Address']
-        ReserveFrom = request.form['ReserveFrom']
-        ReserveTo = request.form['ReserveTo']
-        P_Address = request.form['P_Address']
-        Province = request.form['Province']
-        Postal_Code = request.form['Postal_Code']
-        Insurance = request.form['Insurance']
+    if 'Customer_ID' in session:
+        if request.method == "POST":
+            City = request.form['City']
+            #D_Address = request.form['D_Address']
+            ReserveFrom = request.form['ReserveFrom']
+            ReserveTo = request.form['ReserveTo']
+            P_Address = request.form['P_Address']
+            Province = request.form['Province']
+            Postal_Code = request.form['Postal_Code']
+            Insurance = request.form['Insurance']
 
-       # age = request.form['age']
-        rr = [ReserveFrom,ReserveTo,Insurance,City,P_Address,Province,Postal_Code]
+           # age = request.form['age']
+            rr = [ReserveFrom,ReserveTo,Insurance,City,P_Address,Province,Postal_Code]
+            conn = mysql.connection.cursor()
+            conn.execute("INSERT INTO reservation(ReserveTo,ReserveFrom,Insurance) values(%s,%s,%s)",(ReserveTo,ReserveFrom,Insurance))
+            conn.execute("INSERT INTO pick_up(City,P_Address,Province,Postal_Code) values(%s,%s,%s,%s)",(City,P_Address,Province,Postal_Code))
+            mysql.connection.commit()
+            conn.close()
+            return redirect(url_for('car'))
+        return render_template('reservation.html')
+    return redirect(url_for('login'))
+
+
+@app.route('/payment', methods=['GET','POST'])
+def payment():
+    if request.method == "POST":
+        CardHolderName = request.form['CardHolderName']
+        PaymentType = request.form['PaymentType']
+        Date = request.form['Date']
+        CardNumber = request.form['CardNumber']
+        cvv = request.form['cvv']
+        TotalAmount = request.form['TotalAmount']
+        LateFee = request.form['LateFee']
+
+        pp = [CardHolderName,PaymentType,Date,CardNumber,cvv,TotalAmount,LateFee]
         conn = mysql.connection.cursor()
-        conn.execute("INSERT INTO reservation(ReserveTo,ReserveFrom,Insurance) values(%s,%s,%s)",(ReserveTo,ReserveFrom,Insurance))
-        conn.execute("INSERT INTO pick_up(City,P_Address,Province,Postal_Code) values(%s,%s,%s,%s)",(City,P_Address,Province,Postal_Code))
+        conn.execute("INSERT INTO payment(PaymentType,LateFee,Date,TotalAmount,CardHolderName,CardNumber,cvv) values(%s,%s,%s,%s,%s,%s,%s)",(PaymentType,LateFee,Date,TotalAmount,CardHolderName,CardNumber,cvv))
         mysql.connection.commit()
         conn.close()
         return 'success'
-    return render_template('Reservation.html')
+    return render_template('payment.html')
 
-if _name_ == '_main_':
-    # app.secret_key = "DATABASEPROJECT"
+@app.route('/car', methods=['GET','POST'])
+def car():
+    if request.method == "POST":
+        LicensePlate = request.form['LicensePlate']
+        Make = request.form['Make']
+        Model = request.form['Model']
+        Year = request.form['Year']
+        SeatingCapacity = request.form['SeatingCapacity']
+        Transmission = request.form['Transmission']
+        Color = request.form['Color']
+        cc = [LicensePlate,Make,Model,Year,SeatingCapacity,Transmission,Color]
+        conn = mysql.connection.cursor()
+        conn.execute("INSERT INTO car(LicensePlate,Make,Model,Year,SeatingCapacity,Transmission,Color) values(%s,%s,%s,%s,%s,%s,%s)",(LicensePlate,Make,Model,Year,SeatingCapacity,Transmission,Color))
+        mysql.connection.commit()
+        conn.close()
+        return redirect(url_for('payment'))
+    return render_template('cars.html')
+
+if __name__ == '__main__':
     app.run(debug=True, host='localhost')
+    
