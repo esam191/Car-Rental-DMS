@@ -12,13 +12,13 @@
 <head>
 <title>Reservation</title>
 </head>
-<body style="background-image: url(https://wallpaperaccess.com/full/731628.jpg);opacity: 0.8">
+<body style="background-image: url(https://www.davismiles.com/wp-content/uploads/sites/1/2018/07/Greg-Graphic-Page-web.jpg);background-size: 1700px 1100px">
 <section id="header">
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 
 			<div class="container">
-			<a href="#" class="navbar-brand">Car Rental Company</a>
+			<a href="#" class="navbar-brand"style = "color: #212121;font-weight: bold">Car Rental Company</a>
 			<button class="navbar-toggler" type="button" data-togger= "collapse" data-target= "#navbarSupportedContent" aria-controls = "navbarSupportedContent" aria-expanded ="false" aria-lable = "Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -50,9 +50,10 @@
 
 
 <section class="main">
-<h4 class="mt-3" style="color:#212121">Reservation</h4>
+<h4 class="mt-3" style="color:#212121; padding-left: 180px;font-weight:600">Reservation</h4>
  <form action="#" style="color:#212121" method="post">
-  <div class="container">
+  
+ <div class="container">
         <div class="row">
               <div class="col-sm-6" id="City">
                 <label for="City" class="form-label">Pick Up Location </label>
@@ -62,7 +63,8 @@
                 <label for="D_Address" class="form-label">Drop Off Location</label>
                 <input type="text" class="form-control" name="D_Address" placeholder="Drop Off">
               </div>
-
+        </div>
+        <div class="row">
                 <div class="col-sm-6" id="ReserveFrom">
                 <label for="ReserveFrom" class="form-label">Reserve From </label>
                 <input type="date" class="form-control" name="ReserveFrom" placeholder="Reserve Form" required>
@@ -71,14 +73,16 @@
                 <label for="ReserveTo" class="form-label">Reserve To</label>
                 <input type="date" class="form-control" name="ReserveTo" placeholder="Reserve To">
               </div>
+        </div>      
+
+        <div class="row">
            <div class="col-12" id="P_Address">
                 <label for="P_Address" class="form-label">Address</label>
                     <input type="text" class="form-control" name="P_Address" placeholder="StreetAddress" required>
             </div>
             <br>
         </div>
- </div>
-<div class="container">
+
       <div class="row">
             <div class="col-md-3" id="Province">
                 <label for="Province" class="form-label">Province</label>
@@ -92,7 +96,8 @@
                 <label for="Insurance" class="form-label">Insurance </label>
                 <input type="text" class="form-control" name="Insurance" placeholder="Insurance Number" required>
             </div>
-
+        </div>
+        <div class="row">
               <div class="col-6" id="age">
                 <label for="age" class="form-label">Age</label>
                 <input type="number" class="form-control" name="age" placeholder="Age" required>
@@ -102,7 +107,8 @@
                 <label for="city" class="form-label">City</label>
                 <input type="text" class="form-control" name="city" placeholder="City" required>
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-md-6" id="car">
                 <label for="car" class="form-label">Cars</label>
                 <select name="car" class="form-control">
@@ -111,14 +117,14 @@
                 <option value="Honda">Honda</option>
                 <option value="Toyota">Toyota</option>
                 </select>
-           	</div>
+            </div>
          </div>
-      </div>
+ 
+          <br><br>
+          <button class="btn btn-primary btn-lg">Select Car</button>
+   </div>
+  </form>
 
-     <br><br>
-
-     <button class="btn btn-primary btn-lg">Select Car</button>
-      </form>
 </section>
 
 
