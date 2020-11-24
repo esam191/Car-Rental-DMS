@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+{% extends 'base.html'%}
+{% block content %}
 <html>
  <meta charset="utf-8">
   <meta name="viewport" content="with=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie-edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="top.css">
+  <!--<link rel="stylesheet" type="text/css" href="top.css">-->
 <head>
 <title>Car Rental DMS Project</title>
 </head>
-<body style="background-color:lightblue;">
+<body style= "background-image: url(https://www.davismiles.com/wp-content/uploads/sites/1/2018/07/Greg-Graphic-Page-web.jpg);background-size:1700px 1100px">
 <section id="header">
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-dark">
@@ -22,152 +23,180 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class ="navbar-nav ml-auto">
 						<li class="nav-item activate">
-							<a class="nav-link" href="#" style="color:#212121;font-weight:bold">Home</a>
+							<a class="nav-link" href="home" style="color:#212121;font-weight:bold">Home</a>
 						</li>
 						<li class="nav-item activate">
 							<a class="nav-link" href="#" style="color:#212121;font-weight:bold">About</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="Signup/signup.html" style="color:#212121;font-weight:bold">Sign UP</a>
+							<a class="nav-link" href="signup" style="color:#212121;font-weight:bold">Sign UP</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="#" style="color:#212121;font-weight:bold">Log In</a>
+							<a class="nav-link" href="login" style="color:#212121;font-weight:bold">Log In</a>
 						</li>
 						<li class="nav-item activate">
-							<a class="nav-link" href="#" style="color:#212121;font-weight:bold">Contact Us</a>
+							<a class="nav-link" href="logout" style="color:#212121;font-weight:bold">Log Out</a>
 						</li>
-					</ul>	
+						<li class="nav-item activate">
+							<a class="nav-link" href="view" style="color:#212121;font-weight:bold">Views</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 	</nav>
-	</div>	
+	</div>
 </section>
-	<!-- <form action="{{ url_for('reservation') }}" method="GET">
-				<button class="btn_1">get started</button>
-				</form> -->
 
-	<section class="main" >
-		<h2 style="color: #212121">List of views</h2>
-		<div class="row">
-			<div class="col-sm-4" border="1">
-				<br>
-				<h3 style="color: #212121">view 1</h3>
-				<p style="color: #212121">The following SQL statements compute a join of the Customer, Reservation, and Payment tables which selects records that have matching values in all three tables. It will produce a view with a column for Reservation_ID, First_Name, and Total_Amount.</p>
-			</div>
-			<div class="col-sm-3"></div>
-			<div class="col-sm-5">
-				<br><br><br><br>
+<section class="main" >
+	<h2 style="color: #212121">List of Views</h2>
 
-			<table border="1">
-			  <tr>
-			    <th>Month</th>
-			    <th>Savings</th>
-			  </tr>
-			  <tr>
-			    <td>January</td>
-			    <td>$100</td>
-			  </tr>
-			  <tr>
-			    <td>February</td>
-			    <td>$80</td>
-			  </tr>
-			</table>
-			</div>
+	<div class="row">
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 1</h3>
+			<p style="color: #212121">The following SQL statements compute a join of the Customer, Reservation, and Payment tables which selects records that have matching values in all three tables. It will produce a view with a column for Reservation_ID, First_Name, and Total_Amount.</p>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 2</h3>
+			<p style="color: #212121">The following nested queries include the ALL operator and use a GROUP BY clause at the end. The SQL statements select the names of the customers whose payment amount is greater than the payment amount of all the customers with LateFee as 5. It also retrieves the number of Customers and groups by the first and last name.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-5">
+			<form action="{{ url_for('view1') }}" method="GET">
+
+			<button class="btn btn-primary btn-lg btn-block">View</button>
+			</form>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			 <form action="{{ url_for('view2') }}" method="GET">
+
+			<button class="btn btn-primary btn-lg btn-block">View</button>
+			 </form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 3</h3>
+			<p style="color: #212121">In the following correlated nested query, we are finding all customers whose total amount is more than the average total amount with their own payment type. The condition in the WHERE clause of a nested query references the Total Amount of the Payment relation declared in the outer query.</p>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 4</h3>
+			<p style="color: #212121">The following SQL statements use a full join to return all records when there is a match in the left (Customer) or right (Reservation) table records. The SQL statement below selects all customer first names and all reservations.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-5">
+			 <form action="{{ url_for('view3') }}" method="GET">
+
+			<button class="btn btn-primary btn-lg btn-block">View</button>
+			 </form>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+
+
+			<button class="btn btn-primary btn-lg btn-block">View</button>
 
 		</div>
+	</div>
 
-		<div class="row">
-			<div class="col-sm-4" border="1">
-				<br>
-				<h3 style="color: #212121">view 2</h3>
-				<p style="color: #212121">The following nested queries include the ALL operator and use a GROUP BY clause at the end. The SQL statements select the names of the customers whose payment amount is greater than the payment amount of all the customers with LateFee as 5. It also retrieves the number of Customers and groups by the first and last name.</p>
-			</div>
-			<div class="col-sm-3"></div>
-			<div class="col-sm-5">
-				<br><br><br><br>
-				<table border="1">
-				  <tr>
-				    <th>Month</th>
-				    <th>Savings</th>
-				  </tr>
-				  <tr>
-				    <td>January</td>
-				    <td>$100</td>
-				  </tr>
-				  <tr>
-				    <td>February</td>
-				    <td>$80</td>
-				  </tr>
-				</table>
-			</div>
+	<div class="row">
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 5</h3>
+			<p style="color: #212121">The first SELECT statement selects the first name and last name from the customer table where the customerid is 3. The second SELECT keyword selects the city Whitby from the location table. The UNION operator is used to combine the result-set of the two SELECT statements.</p>
 		</div>
-
-			<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 3</h3>
-				<p style="color: #212121">In the following correlated nested query, we are finding all customers whose total amount is more than the average total amount with their own payment type. The condition in the WHERE clause of a nested query references the Total Amount of the Payment relation declared in the outer query.</p>
-			</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 6</h3>
+			<p style="color: #212121">The following sql statement selects all customers, and the reservations that they might have. The left join keyword returns all the records from the left table (Customer) and the matched records from the right table (Reservation).</p>
 		</div>
+	</div>
 
+	<div class="row">
+		<div class="col-sm-5">
 
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 4</h3>
-				<p style="color: #212121">The following SQL statements use a full join to return all records when there is a match in the left (Customer) or right (Reservation) table records. The SQL statement below selects all customer first names and all reservations.</p>
-			</div>
+				 <button class="btn btn-primary btn-lg btn-block">View</button>
+
 		</div>
-
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 5</h3>
-				<p style="color: #212121">The first SELECT statement selects the first name and last name from the customer table where the customerid is 3. The second SELECT keyword selects the city Whitby from the location table. The UNION operator is used to combine the result-set of the two SELECT statements.</p>
-			</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			 <form action="{{ url_for('view6') }}" method="GET">
+			<button class="btn btn-primary btn-lg btn-block">View</button>
+			 </form>
 		</div>
+	</div>
 
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 6</h3>
-				<p style="color: #212121">The following sql statement selects all customers, and the reservations that they might have. The left join keyword returns all the records from the left table (Customer) and the matched records from the right table (Reservation).</p>
-			</div>
+	<div class="row">
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 7</h3>
+			<p style="color: #212121">The following SQL statement selects all make, model, year, and color, with a seating capacity between 3 and 4. The BETWEEN operator is used to select value with the range. The GROUP BY keyword groups by the car list by color.</p>
 		</div>
-
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 7</h3>
-				<p style="color: #212121">The following SQL statement selects all make, model, year, and color, with a seating capacity between 3 and 4. The BETWEEN operator is used to select value with the range. The GROUP BY keyword groups by the car list by color.</p>
-			</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 8</h3>
+			<p style="color: #212121">First nested query uses the payment table to check if the TotalAmount is greater than the sum of LateFee. Second nested query uses the deal table to check if the total amount from the payment table is greater than the amount of  deal_type. The OR operator checks if the first query is true and runs it if it is, else, it runs the second query.</p>
 		</div>
+	</div>
 
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 8</h3>
-				<p style="color: #212121">First nested query uses the payment table to check if the TotalAmount is greater than the sum of LateFee. Second nested query uses the deal table to check if the total amount from the payment table is greater than the amount of  deal_type. The OR operator checks if the first query is true and runs it if it is, else, it runs the second query.</p>
-			</div>
+	<div class="row">
+		<div class="col-sm-5">
+			 <form action="{{ url_for('view7') }}" method="GET">
+				 <button class="btn btn-primary btn-lg btn-block">View</button>
+			 </form>
 		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			 <form action="{{ url_for('view8') }}" method="GET">
 
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 9</h3>
-				<p style="color: #212121">The following sql statement selects the first and last names of customers where the total amount they have to pay is less than 100. The EXISTS function checks whether the result of the correlated nested query is empty or not. It returns a TRUE result if the nested query contains at least one row that satisfies the condition of total amount being less than 100 and FALSE if the nested query contains no rows that satisfy the query.</p>
-			</div>
+			<button class="btn btn-primary btn-lg btn-block">View</button>
+			 </form>
 		</div>
+	</div>
 
-		<div class="row">
-			<div class="col-sm-4">
-				<br>
-				<h3 style="color: #212121">view 10 </h3>
-				<p style="color: #212121">The following sql statement selects all customers, and the reservations that they might have. The right join keyword returns all the records from the right table (Customer) and the matched records from the left table (Reservation).</p>
-			</div>
+	<div class="row">
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 9</h3>
+			<p style="color: #212121">The following sql statement selects the first and last names of customers where the total amount they have to pay is less than 100. The EXISTS function checks whether the result of the correlated nested query is empty or not. It returns a TRUE result if the nested query contains at least one row that satisfies the condition of total amount being less than 100 and FALSE if the nested query contains no rows that satisfy the query.</p>
 		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			<br>
+			<h3 style="color: #212121">View 10</h3>
+			<p style="color: #212121">The following sql statement selects all customers, and the reservations that they might have. The right join keyword returns all the records from the right table (Customer) and the matched records from the left table (Reservation).</p>
+		</div>
+	</div>
 
-	</section>
+	<div class="row">
+		<div class="col-sm-5">
+			 <form action="{{ url_for('view9') }}" method="GET">
+
+			<button class="btn btn-primary btn-lg btn-block">View</button>
+			 </form>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			 <form action="{{ url_for('view10') }}" method="GET">
+
+			<button class="btn btn-primary btn-lg btn-block">View</button>
+			 </form>
+		</div>
+	</div>
+</section>
 
 <footer>
 	<div class="container">
@@ -215,3 +244,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
+{% endblock %}
