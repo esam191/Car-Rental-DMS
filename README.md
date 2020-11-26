@@ -6,15 +6,20 @@ A car rental database management system built using Flask web framework. It prov
 
 Follow the instructions below to run the project on your local machine for development and testing purposes. 
 
+- Clone project run in cmd as admin
+```
+git clone https://github.com/esam191/Car-Rental-DMS
+```
+
 ### Prerequisites
 
 Python and Flask need to be installed 
 
+- Install [Python](https://www.python.org/downloads/release/python-390/)
 ```
 pip install flask
 ```
-- Install [Python](https://www.python.org/downloads/release/python-390/)
-- Install dependencies run in cmd as admin in project folder
+- Install dependencies and run in cmd as admin in project folder
 
 ```
 pip install -r requirements.txt
@@ -24,7 +29,24 @@ pip install mysqlclient-1.3.13-cp27-cp27m-win_amd64.whl
 python setup.py build
 python setup.py install
 ```
-- Install [MySQL](https://dev.mysql.com/downloads/mysql/) Server
+
+### MySQL Database Setup
+
+- Install [MySQL](https://dev.mysql.com/downloads/mysql/) Server, and include the MySQL Workbench in the installation
+- Select the default developer installation
+- When creating a user, select both the username and password as 'root'
+
+| Username           | Password  |
+| ------------- | ----- |
+| root | root |
+
+- When creating a database, create a schema and call it 'car-db'
+
+| Schema      |     
+| ------------- | 
+| car-db | 
+
+- Use the .sql scripts in the db/schema folder to create the tables and run the queries.
 
 ## Run Project
 
@@ -36,13 +58,10 @@ python main.py
 ## Built With
 
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/) - The web framework used
-* [MySQL Workbench](hhttps://www.mysql.com/products/workbench/) - Used to construct the database
+* [MySQL Workbench](https://www.mysql.com/products/workbench/) - Used to construct the database
 
 ## Authors
 
 * **Esam Uddin** - [esam191](https://github.com/esam191)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
