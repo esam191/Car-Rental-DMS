@@ -64,4 +64,8 @@ python main.py
 
 * **Esam Uddin** - [esam191](https://github.com/esam191)
 
+* **Ashwin Shanmugam** - [ashwin1609](https://github.com/ashwin1609)
+
+* **Mihir Patel** - [mihikumar1212](https://github.com/mihikumar1212)
+
 
