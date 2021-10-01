@@ -1,0 +1,3 @@
+pip install flask
+pip install flask_mysqldb
+pip install flask_restful
