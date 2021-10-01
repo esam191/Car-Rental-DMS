@@ -55,6 +55,11 @@ Go to the main folder and run the main.py file
 python main.py
 ```
 
+## Demo
+
+Home Page
+![Alt text](/main/static/img/home.JPG?raw=true "Home Page")
+
 ## Built With
 
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/) - The web framework used
