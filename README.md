@@ -65,8 +65,6 @@ python main.py
 
 ![Alt text](/main/static/img/reservation.JPG?raw=true "Reservation Page")
 
-![Alt text](/main/static/img/login.JPG?raw=true "Login Page")
-
 ## Built With
 
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/) - The web framework used
