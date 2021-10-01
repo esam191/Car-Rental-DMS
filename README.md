@@ -58,7 +58,16 @@ python main.py
 ## Demo
 
 Home Page
+
 ![Alt text](/main/static/img/home.JPG?raw=true "Home Page")
+
+Sign Up Page
+
+![Alt text](/main/static/img/signup.JPG?raw=true "Sign Up Page")
+
+Login Page
+
+![Alt text](/main/static/img/login.JPG?raw=true "Login Page")
 
 ## Built With
 
