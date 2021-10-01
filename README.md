@@ -61,6 +61,10 @@ python main.py
 
 ![Alt text](/main/static/img/signup.JPG?raw=true "Sign Up Page")
 
+![Alt text](/main/static/img/selection.JPG?raw=true "Selection Page")
+
+![Alt text](/main/static/img/reservation.JPG?raw=true "Reservation Page")
+
 ![Alt text](/main/static/img/login.JPG?raw=true "Login Page")
 
 ## Built With
